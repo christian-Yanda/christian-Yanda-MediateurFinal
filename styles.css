@@ -1,0 +1,103 @@
+/* styles.css */
+
+:root {
+    --blue: #0057A3;
+    --orange: #FF7A00;
+    --muted: #F2F2F2;
+    --background-light: #fff;
+    --background-dark: #121212;
+    --text-light: #122;
+    --text-dark: #e0e0e0;
+}
+
+body {
+    font-family: "Poppins", "Roboto", sans-serif;
+    background: var(--background-light);
+    color: var(--text-light);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode nav a {
+    color: #000000; /* Liens en blanc en mode sombre */
+}
+
+.navbar {
+    transition: background 0.3s;
+}
+
+.dark-mode .navbar {
+    background-color: #1a1a1a; /* Couleur de la navbar en mode sombre */
+}
+
+footer {
+    background-color: #f8f9fa;
+}
+
+.dark-mode footer {
+    background-color: #ffffff; /* Couleur du footer en mode sombre */
+}
+
+footer h5, footer p {
+    color: black ;
+}
+
+footer a {
+    color: #0057A3;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #FF7A00;
+}
+
+footer a i {
+    font-size: 1.5rem; /* Ajuste la taille des icônes */
+    color: #0057A3; /* Couleur des icônes */
+}
+
+footer .dark-mode a i {
+    color: #000000; /* Couleur des icônes en mode sombre */
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.floating-button:hover {
+    background: #e06a00;
+}
+
+/* Formulaire de connexion */
+.connexion {
+  background-color: rgba(247, 238, 238, 0.829);
+}
+
+form h3 {
+  font-weight: 600;
+}
+
+form .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.15);
+}
+
+.dark-mode .connexion {
+    color: black;
+}

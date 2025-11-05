@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Médiateur.com — Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Inclusion du fichier CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body id="dark-mode">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="me-2" aria-hidden="true">
+                    <svg width="42" height="42" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="34" r="4" fill="#FF7A00"/>
+                        <circle cx="33" cy="20" r="4" fill="#0057A3"/>
+                        <circle cx="50" cy="34" r="4" fill="#FF7A00"/>
+                        <path d="M19 34 Q33 10 47 34" stroke="#0057A3" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="brand" id="text-black">Médiateur<span class="dotcom" id="text-black">.com</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#">E-commerce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services rénovation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hôtels & Réservations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Médiation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Entreprises</a></li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-outline-primary me-2" href="admin/login.html">Connexion</a>
+                        <a class="btn btn-accent btn-outline-primary me-2"  href="#">Inscription</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero pt-5 pb-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <h1 class="mb-3" style="font-weight:700; color:var(--blue)">Au centre de vos opportunités</h1>
+                    <p class="lead " id="text-white">Médiateur.com connecte clients, entreprises et prestataires — e-commerce, rénovation, partenariats, publicité et réservations.</p>
+                    <form class="row g-2 mt-4" onsubmit="return handleSearch(event);">
+                        <div class="col-sm-8">
+                            <input class="form-control form-control-lg" id="searchInput" placeholder="Rechercher : produits, services, entreprises..." />
+                        </div>
+                        <div class="col-sm-4 d-grid">
+                            <button class="btn btn-primary btn-lg" type="submit">Rechercher</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card card-service p-4">
+                        <div class="row g-3">
+                            <div class="col-4 d-flex align-items-center justify-content-center">
+                                <div style="width:84px; height:84px; border-radius:12px; background:linear-gradient(180deg,#0057A3 0%, #0078D7 100%); display:flex; align-items:center; justify-content:center;">
+                                    <svg width="44" height="44" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20" cy="35" r="4" fill="#FF7A00"/>
+                                        <path d="M22 36 Q30 18 38 36" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <h5 style="margin-bottom:6px;">Trouver un service fiable</h5>
+                                <p class="mb-0 text-muted">Comparez des offres, demandez des devis et sécurisez vos transactions.</p>
+                                <div class="mt-3"><a href="#" class="btn btn-outline-primary btn-sm">Découvrir</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards / Sections -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 card-service h-100">
+                        <h5>🛒 E-commerce</h5>
+                        <p class="text-muted">Achetez et vendez en toute sécurité — gestion des paiements et des litiges intégrée.</p>
+                        <a class="stretched-link text-decoration-none" href="#"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 card-service h-100">
+                        <h5>🏠 Services rénovation</h5>
+                        <p class="text-muted">Demandez des devis, vérifiez les artisans et suivez l’avancement du chantier.</p>
+                        <a class="stretched-link text-decoration-none" href="#"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 card-service h-100">
+                        <h5>🏨 Hôtels & Réservations</h5>
+                        <p class="text-muted">Réservation simple, confirmation et support en cas de litige.</p>
+                        <a class="stretched-link text-decoration-none" href="#"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <div class="card p-4 card-service">
+                        <h5>🤝 Médiation</h5>
+                        <p class="text-muted">Chat sécurisé, dépôt de dossier, suivi et recommandations.</p>
+                        <a class="stretched-link text-decoration-none" href="#"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 card-service">
+                        <h5>🏢 Entreprises</h5>
+                        <p class="text-muted">Pages pro, propositions B2B et mise en relation pour partenariats.</p>
+                        <a class="stretched-link text-decoration-none" href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-top py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Médiateur.com</h5>
+                    <p><strong>Connecter. Faciliter. Réussir.</strong></p>
+                    <div class="text-muted small">© <span id="year"></span> Médiateur.com</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-decoration-none" href="#">À propos</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQ</a></li>
+                        <li><a class="text-decoration-none" href="#">Blog</a></li>
+                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><a class="text-decoration-none" href="#">CGU</a></li>
+                        <li><a class="text-decoration-none" href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Réseaux Sociaux</h5>
+                    <div>
+                        <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="me-3" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="me-3" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5>Inscrivez-vous à notre Newsletter</h5>
+                    <form class="d-flex">
+                        <input type="email" class="form-control" placeholder="Votre e-mail" aria-label="Votre e-mail" required>
+                        <button class="btn btn-primary ms-2" type="submit">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button for Dark Mode -->
+    <button class="floating-button" onclick="toggleDarkMode()">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        function handleSearch(event) {
+            event.preventDefault(); // Empêche la soumission du formulaire
+            const query = document.getElementById('searchInput').value;
+            alert(`Recherche pour : ${query}`); // Simule une recherche
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
