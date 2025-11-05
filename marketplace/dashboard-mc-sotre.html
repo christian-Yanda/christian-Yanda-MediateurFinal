@@ -1,0 +1,280 @@
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MC Store — Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style-mc-store.css" rel="stylesheet">
+  <style>
+    /* small animations */
+    .fade { opacity:0; transform: translateY(10px); transition: all 600ms ease; }
+    .fade.show { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="brand">MC Store<span class="dot">.com</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link " href="#">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Boutiques</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Deals Rapides</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Devenir Vendeur</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Politique</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-outline-light me-2" href="#">Connexion</a>
+            <a class="btn btn-warning" href="#">S'inscrire</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero mt-3">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="title">Vendez en toute confiance — Achetez en toute simplicité</div>
+          <div class="slogan" style="font-weight:700; font-size:1.4rem; margin-top:8px;">Au centre de vos opportunités</div>
+          <div class="subtitle mt-2">MC Store connecte acheteurs et vendeurs en RDC & Afrique centrale avec sécurité, médiation et visibilité premium.</div>
+
+          <div class="search-bar mt-4">
+            <input type="search" placeholder="Rechercher articles, boutiques, catégories..." aria-label="search">
+            <button onclick="alert('Recherche non active en prototype')">Rechercher</button>
+          </div>
+
+          <div class="mt-4 d-flex gap-3 flex-wrap">
+            <button class="btn btn-outline-light" onclick="scrollToPricing()">Créer ma boutique — $10 / mois</button>
+            <button class="btn btn-warning" onclick="openPostDeal()">Poster un Deal Rapide — 1000 FC (24h)</button>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card">
+            <h4>Pourquoi MC Store ?</h4>
+            <p>Visibilité, confiance et outils pro (dashboard vendeur, protection des paiements et médiation rapide).</p>
+            <ul>
+              <li class="small">Support local & paiement mobile</li>
+              <li class="small">Vérification vendeurs</li>
+              <li class="small">Statistiques et suivi des ventes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Categories -->
+    <section class="services-grid mt-4 fade" id="categories">
+      <div class="card text-center p-3">
+        <div class="service-icon">
+          <!-- icon: shopping bag -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 2h12l-1 4H7L6 2z" fill="#fff"/></svg>
+        </div>
+        <div class="service-title">E-commerce</div>
+        <div class="small">Boutiques & catalogues</div>
+      </div>
+
+      <div class="card text-center p-3">
+        <div class="service-icon" style="background:linear-gradient(180deg,var(--mc-orange),var(--mc-orange-2))">
+          <!-- icon: hammer -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M2 21l7-7" stroke="#fff" stroke-width="2"/></svg>
+        </div>
+        <div class="service-title">Rénovation</div>
+        <div class="small">Artisans & devis</div>
+      </div>
+
+      <div class="card text-center p-3">
+        <div class="service-icon" style="background:linear-gradient(180deg,#22C55E,#10B981)">
+          <!-- icon: hotel -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="10" rx="2" fill="#fff"/></svg>
+        </div>
+        <div class="service-title">Hôtels & Réservations</div>
+        <div class="small">Salles & hébergements</div>
+      </div>
+    </section>
+
+    <!-- Pricing & Policies -->
+    <section class="mt-4">
+      <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+        <div class="price card">
+          <h4>Créer une boutique</h4>
+          <div class="amount"><span class="amount-text">$10</span> <span class="small">/ mois</span></div>
+          <div class="small">Accès au dashboard vendeur, listings illimités (selon conditions), support prioritaire.</div>
+          <div class="mt-3"><button class="btn btn-warning" onclick="subscribeShop()">S'abonner</button></div>
+        </div>
+
+        <div class="price card">
+          <h4>Deal Rapide (24h)</h4>
+          <div class="amount"><span class="amount-text">1000</span> <span class="small">FC (24h)</span></div>
+          <div class="small">Poster une annonce prioritaire qui reste 24 heures en haut des résultats "Deals Rapides".</div>
+          <div class="mt-3"><button class="btn btn-outline-light" onclick="openPostDeal()">Poster un Deal</button></div>
+        </div>
+
+        <div class="card" style="min-width:260px;">
+          <h4>Politique — Rappel</h4>
+          <p class="small">1) Les vendeurs doivent respecter les règles locales. 2) Les deals rapides sont payants et non remboursables sauf erreur prouvée. 3) En cas de litige, le module Médiation est disponible.</p>
+          <a href="#" class="small" onclick="alert('Politique complète à rédiger / lier')">Lire la politique complète</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deals Rapides -->
+    <section class="mt-4">
+      <h4>Deals Rapides</h4>
+      <div class="deals-grid" id="deals">
+        <!-- Example deal (JS will populate countdown) -->
+        <div class="deal card" data-ends="">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Téléphone XYZ - Promo</div>
+              <div class="small">Vendeur: ElectroLub</div>
+            </div>
+            <div class="countdown" style="text-align:right">
+              <div class="small">Expire dans</div>
+              <div class="countdown-number">--:--:--</div>
+            </div>
+          </div>
+          <div class="mt-3"><button class="btn btn-warning" onclick="buyDeal()">Acheter</button></div>
+        </div>
+
+        <!-- other deals -->
+      </div>
+    </section>
+
+    <!-- Premium shops showcase -->
+    <section class="mt-4">
+      <h4>Boutiques Premium</h4>
+      <div class="row-gap" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div class="card p-3" style="min-width:220px">Boutique A</div>
+        <div class="card p-3" style="min-width:220px">Boutique B</div>
+        <div class="card p-3" style="min-width:220px">Boutique C</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-4">
+      <div class="d-flex flex-wrap gap-4">
+        <div class="col">
+          <h5>MC Store</h5>
+          <p class="contact">MC Store — Marketplace premium en RDC & Afrique centrale.<br>Email: chrisRenovation@gmail.com<br>Télé: 0816559713</p>
+        </div>
+        <div class="col links">
+          <h6>Liens</h6>
+          <a href="#">À propos</a>
+          <a href="#">Aide & Support</a>
+          <a href="#">Devenir vendeur</a>
+          <a href="#">Politique</a>
+        </div>
+        <div class="col">
+          <h6>Newsletter</h6>
+          <p class="small">Recevez les meilleures offres.</p>
+          <div style="display:flex;gap:8px">
+            <input placeholder="Votre email" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)">
+            <button class="btn btn-warning">S'abonner</button>
+          </div>
+        </div>
+        <div class="col">
+          <h6>Suivez-nous</h6>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <div class="card p-2">FB</div>
+            <div class="card p-2">WA</div>
+            <div class="card p-2">IG</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Floating Dark Mode -->
+  <div id="darkModeBtn" title="Basculer thème">🌓</div>
+
+  <!-- Post Deal Modal (simple) -->
+  <div id="postDealModal" style="display:none;position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:9999">
+    <div style="background:var(--card-bg);padding:18px;border-radius:10px;width:420px;color:var(--text)">
+      <h5>Poster un Deal Rapide — 1000 FC (24h)</h5>
+      <p class="small">Remplissez les informations et procédez au paiement mobile.</p>
+      <input placeholder="Titre du produit" style="width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-top:8px;background:transparent;color:var(--text)"><br>
+      <input placeholder="Prix" style="width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-top:8px;background:transparent;color:var(--text)"><br>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn btn-warning" onclick="confirmPostDeal()">Payer 1000 FC</button>
+        <button class="btn btn-outline-light" onclick="closePostDeal()">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle with persistence
+    const darkBtn = document.getElementById('darkModeBtn');
+    const userPref = localStorage.getItem('mc_theme');
+    if(userPref === 'light') document.body.classList.add('light');
+    function toggleTheme(){
+      document.body.classList.toggle('light');
+      localStorage.setItem('mc_theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+    darkBtn.addEventListener('click', toggleTheme);
+
+    // Fade show
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.fade').forEach((el,i)=>setTimeout(()=>el.classList.add('show'), 120*i));
+      // populate sample deal with countdown 24h from now
+      addSampleDeal();
+    });
+
+    // Deals: add sample deal (ends 24h from now)
+    function addSampleDeal(){
+      const deals = document.getElementById('deals');
+      const d = document.querySelector('.deal');
+      const clone = d.cloneNode(true);
+      const now = new Date();
+      const end = new Date(now.getTime() + 24*60*60*1000);
+      clone.querySelector('.countdown-number').innerText = formatTimeLeft(end - now);
+      clone.dataset.ends = end.toISOString();
+      deals.appendChild(clone);
+      // start countdown loop
+      setInterval(updateCountdowns, 1000);
+    }
+    function updateCountdowns(){
+      document.querySelectorAll('.deal').forEach(el=>{
+        const ends = el.dataset.ends;
+        if(!ends) return;
+        const t = new Date(ends) - new Date();
+        if(t<=0){ el.querySelector('.countdown-number').innerText = "00:00:00"; el.style.opacity=0.6; return; }
+        el.querySelector('.countdown-number').innerText = formatTimeLeft(t);
+      });
+    }
+    function formatTimeLeft(ms){
+      if(ms<=0) return "00:00:00";
+      const s = Math.floor(ms/1000)%60;
+      const m = Math.floor(ms/60000)%60;
+      const h = Math.floor(ms/3600000);
+      return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    }
+
+    // Subscription actions
+    function scrollToPricing(){ window.scrollTo({top: document.querySelector('.price').offsetTop - 40, behavior:'smooth'}); }
+    function subscribeShop(){ alert('Procéder au paiement pour $10 (prototype) — intégrer paiement mobile / carte en prod.'); }
+
+    // Post deal modal controls
+    function openPostDeal(){ document.getElementById('postDealModal').style.display='flex'; }
+    function closePostDeal(){ document.getElementById('postDealModal').style.display='none'; }
+    function confirmPostDeal(){ alert('Paiement 1000 FC simulé — Deal publié (prototype).'); closePostDeal(); }
+
+    // buyDeal placeholder
+    function buyDeal(){ alert('Procéder à l\'achat — intégrer paiement en prod.'); }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
