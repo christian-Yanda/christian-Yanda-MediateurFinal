@@ -136,7 +136,8 @@ body:not(.light) .services-grid .service-icon svg {fill: #FF7A00;}
 }
 .footer .col { min-width:200px; margin-bottom:12px; }
 .footer .links a { display:block; color:var(--muted); text-decoration:none; margin-bottom:6px; }
-.footer .contact { color:; }
+.footer .contact { color:; } 
+body:not(.light)  .bi { color: blue;}
 
 /* Floating buttons */
 #darkModeBtn {
