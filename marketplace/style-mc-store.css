@@ -132,7 +132,7 @@ body:not(.light) .services-grid .service-icon svg {fill: #FF7A00;}
 /* Footer enhanced */
 .footer {
   margin-top:36px; padding:28px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-  border-top:1px solid rgba(255,255,255,0.03);
+  border-top:2px solid rgba(255, 0, 0);
 }
 .footer .col { min-width:200px; margin-bottom:12px; }
 .footer .links a { display:block; color:var(--muted); text-decoration:none; margin-bottom:6px; }
