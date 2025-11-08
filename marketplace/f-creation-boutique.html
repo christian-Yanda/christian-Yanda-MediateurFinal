@@ -1,0 +1,195 @@
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MC Store — Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="style-mc-store.css" rel="stylesheet">
+  <?xml version="1.0" encoding="UTF-8"?>
+  <style>
+    /* small animations */
+    .fade { opacity:0; transform: translateY(10px); transition: all 600ms ease; }
+    .fade.show { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg shadow bg-dark-subtle">
+    <div class="container pt-1 pb-1">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="brand">MC Store<span class="dot">.com</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link " href="#">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Boutiques</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Deals Rapides</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Devenir Vendeur</a></li>
+          <li class="nav-item"><a class="nav-link " href="#">Politique</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-outline-light me-2" href="#">Connexion</a>
+            <a class="btn btn-warning" href="#">S'inscrire</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="create-shop container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center fw-bold mb-4 title-main">
+            Créer votre Boutique sur <span class="accent">MC Store</span>
+          </h2>
+
+          <form class="card p-4 card-service" id="shopForm">
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Nom de la boutique *</label>
+              <input type="text" class="form-control" placeholder="Ex : Store Tech Africa" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Catégorie principale *</label>
+              <select class="form-select" required>
+                <option selected disabled>Choisir une catégorie</option>
+                <option value="">Électronique</option>
+                <option>Mode & Accessoires</option>
+                <option>Maison & Jardin</option>
+                <option>Beauté & Santé</option>
+                <option>Sport</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Logo de la boutique *</label>
+              <input type="file" class="form-control" accept="image/*" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Bannière *</label>
+              <input type="file" class="form-control" accept="image/*" required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Téléphone Pro *</label>
+                <input type="text" class="form-control" placeholder="+243 81..." required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Email Pro *</label>
+                <input type="email" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Adresse / Ville *</label>
+              <input type="text" class="form-control" placeholder="Lubumbashi, Goma, Kinshasa..." required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Description</label>
+              <textarea class="form-control" rows="3" placeholder="Décrivez votre boutique..."></textarea>
+            </div>
+
+            <div class="alert alert-warning small">
+              💡 Frais d’abonnement : <strong>10 $ / mois</strong> — Aucun engagement. Résiliable à tout moment.
+            </div>
+
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-accent btn-lg fw-bold bg-primary">
+                Continuer vers le Paiement
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Dark Mode -->
+  <div id="darkModeBtn" title="Basculer thème">🌓</div>
+
+  <!-- Post Deal Modal (simple) -->
+  <div id="postDealModal" style="display:none;position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:9999">
+    <div style="background:var(--card-bg);padding:18px;border-radius:10px;width:420px;color:var(--text)">
+      <h5>Poster un Deal Rapide — 1000 FC (24h)</h5>
+      <p class="small">Remplissez les informations et procédez au paiement mobile.</p>
+      <input placeholder="Titre du produit" style="width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-top:8px;background:transparent;color:var(--text)"><br>
+      <input placeholder="Prix" style="width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-top:8px;background:transparent;color:var(--text)"><br>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn btn-warning" onclick="confirmPostDeal()">Payer 1000 FC</button>
+        <button class="btn btn-outline-light" onclick="closePostDeal()">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle with persistence
+    const darkBtn = document.getElementById('darkModeBtn');
+    const userPref = localStorage.getItem('mc_theme');
+    if(userPref === 'light') document.body.classList.add('light');
+    function toggleTheme(){
+      document.body.classList.toggle('light');
+      localStorage.setItem('mc_theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+    darkBtn.addEventListener('click', toggleTheme);
+
+    // Fade show
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.fade').forEach((el,i)=>setTimeout(()=>el.classList.add('show'), 120*i));
+      // populate sample deal with countdown 24h from now
+      addSampleDeal();
+    });
+
+    // Deals: add sample deal (ends 24h from now)
+    function addSampleDeal(){
+      const deals = document.getElementById('deals');
+      const d = document.querySelector('.deal');
+      const clone = d.cloneNode(true);
+      const now = new Date();
+      const end = new Date(now.getTime() + 24*60*60*1000);
+      clone.querySelector('.countdown-number').innerText = formatTimeLeft(end - now);
+      clone.dataset.ends = end.toISOString();
+      deals.appendChild(clone);
+      // start countdown loop
+      setInterval(updateCountdowns, 1000);
+    }
+    function updateCountdowns(){
+      document.querySelectorAll('.deal').forEach(el=>{
+        const ends = el.dataset.ends;
+        if(!ends) return;
+        const t = new Date(ends) - new Date();
+        if(t<=0){ el.querySelector('.countdown-number').innerText = "00:00:00"; el.style.opacity=0.6; return; }
+        el.querySelector('.countdown-number').innerText = formatTimeLeft(t);
+      });
+    }
+    function formatTimeLeft(ms){
+      if(ms<=0) return "00:00:00";
+      const s = Math.floor(ms/1000)%60;
+      const m = Math.floor(ms/60000)%60;
+      const h = Math.floor(ms/3600000);
+      return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    }
+
+    // Subscription actions
+    function scrollToPricing(){ window.scrollTo({top: document.querySelector('.price').offsetTop - 40, behavior:'smooth'}); }
+
+    // buyDeal placeholder
+    function buyDeal(){ alert('Procéder à l\'achat — intégrer paiement en prod.'); }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

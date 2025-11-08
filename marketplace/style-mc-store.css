@@ -137,7 +137,7 @@ body:not(.light) .services-grid .service-icon svg {fill: #FF7A00;}
 .footer .col { min-width:200px; margin-bottom:12px; }
 .footer .links a { display:block; color:var(--muted); text-decoration:none; margin-bottom:6px; }
 .footer .contact { color:; } 
-body:not(.light)  .bi { color: blue;}
+body:not(.light)  .bi { color: rgb(255, 0, 0);}
 
 /* Floating buttons */
 #darkModeBtn {
@@ -145,6 +145,11 @@ body:not(.light)  .bi { color: blue;}
   background:var(--mc-orange); display:flex; align-items:center; justify-content:center; color:var(--mc-white);
   box-shadow:0 8px 30px rgba(0,0,0,0.5); cursor:pointer; z-index:9999;
 }
+
+/* F creation boutique */
+body:not(.light) .create-shop label {color: var(--mc-muted);}
+
+
 
 /* responsive */
 @media (max-width:768px){

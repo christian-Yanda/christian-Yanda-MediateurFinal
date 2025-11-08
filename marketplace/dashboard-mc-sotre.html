@@ -117,15 +117,15 @@
               <h4>Créer une boutique</h4>
               <div class="amount"><span class="amount-text">$10</span> <span class="small">/ mois</span></div>
               <div class="small">Accès au dashboard vendeur, listings illimités (selon conditions), support prioritaire.</div>
-              <div class="mt-3"><button class="btn btn-warning" onclick="subscribeShop()">S'abonner</button></div>
+              <div class="mt-3"><button class="btn btn-warning">S'abonner</button></div>
             </div>
           </div>
-          <div class="col">
+          <div class="col" style="height : 100%;">
             <div class="price card">
               <h4>Deal Rapide (24h)</h4>
               <div class="amount"><span class="amount-text">1000</span> <span class="small">FC (24h)</span></div>
               <div class="small">Poster une annonce prioritaire qui reste 24 heures en haut des résultats "Deals Rapides".</div>
-              <div class="mt-3"><button class="btn btn-outline-light text-nowrap" onclick="openPostDeal()">Poster un Deal</button></div>
+              <div class="mt-3"><button class="btn btn-outline-light btn-info text-nowrap">Poster un Deal</button></div>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@
         <div class="card" style="min-width:260px;">
           <h4>Politique — Rappel</h4>
           <p class="small">1) Les vendeurs doivent respecter les règles locales. 2) Les deals rapides sont payants et non remboursables sauf erreur prouvée. 3) En cas de litige, le module Médiation est disponible.</p>
-          <a href="politique.html" class="small" onclick="alert('Politique complète à rédiger / lier')">Lire la politique complète</a>
+          <a href="politique.html" class="small">Lire la politique complète</a>
         </div>
       </div>
     </section>
@@ -183,7 +183,7 @@
           <a href="#">À propos</a>
           <a href="#">Aide & Support</a>
           <a href="#">Devenir vendeur</a>
-          <a href="#">Politique</a>
+          <a href="politique.html">Politique</a>
         </div>
         <div class="col">
           <h6>Newsletter</h6>
@@ -278,12 +278,6 @@
 
     // Subscription actions
     function scrollToPricing(){ window.scrollTo({top: document.querySelector('.price').offsetTop - 40, behavior:'smooth'}); }
-    function subscribeShop(){ alert('Procéder au paiement pour $10 (prototype) — intégrer paiement mobile / carte en prod.'); }
-
-    // Post deal modal controls
-    function openPostDeal(){ document.getElementById('postDealModal').style.display='flex'; }
-    function closePostDeal(){ document.getElementById('postDealModal').style.display='none'; }
-    function confirmPostDeal(){ alert('Paiement 1000 FC simulé — Deal publié (prototype).'); closePostDeal(); }
 
     // buyDeal placeholder
     function buyDeal(){ alert('Procéder à l\'achat — intégrer paiement en prod.'); }
